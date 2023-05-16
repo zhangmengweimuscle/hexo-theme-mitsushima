@@ -1,0 +1,31 @@
+<!-- use css/navigation.css -->
+<div id="navigation" class="navigation">
+    <div id="navigation-profile" class="navigation-profile">
+        <ul class="main-menu">   
+            <% for (menu in theme.menus) { %>
+                <li id="<%- menu%>" class="main-menu-item <%if(is_current(theme.menus[menu])){%> active <% } %>">
+                    <a href="<%- theme.menus[menu] %>"><%- menu%></a>
+                </li>
+            <% }%>
+            
+            <!-- local-search功能 -->
+            <li class=" main-menu-search">
+                <%- js('js/search.js') %>
+                <script>
+                    var search_path = "<%= config.search.path %>";
+                    if(search_path.length ==0 ){
+                    search_path = "search.xml";
+                    }
+                    var path = "<%= config.root %>" + search_path;
+                    searchFunc(path,'local-search-input','local-search-result');
+                </script>
+                <div class="search-item">
+                    <form style="display:flex !important;">
+                        <input type="text" id="local-search-input" class="search" aria-label="Search" placeholder="local-search" />
+                    </form>
+                <div id="local-search-result"></div>
+            </li>
+    
+        </ul>
+    </div>
+</div>

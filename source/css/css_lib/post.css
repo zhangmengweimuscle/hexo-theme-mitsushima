@@ -1,0 +1,88 @@
+/* #################### 文章索引 #################### */
+#tooc{
+    /* overflow: visible; */
+    overflow: hidden;
+    width: 17%;
+    padding-top: 20px;
+    background-color: rgb(42 23 20);
+    position: fixed;
+    top: 15%;
+    left: 10px;
+    height: 85%;
+    /* height: 200px; */
+}
+#toc{
+    /* width: 100%; */
+    width: 110%;
+    padding-top: 55px;
+    padding-bottom: 55px;
+    /* position: sticky;
+    position: -webkit-sticky;
+    bottom: 55px; */
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 80%;
+}
+#toc a.read{
+    /*color: #e06c75;*/
+    color: #87daff;
+    border-bottom: 0;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+}
+
+#toc a{
+    color: #999;
+    border-bottom: 0;
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+    -ms-transition: 0.2s;
+    -o-transition: 0.2s;
+}
+
+#toc a:hover{
+    /*color: #87daff;*/
+    color: #e5c07b;
+    padding-left: 20px;
+    -webkit-transition: 0.1s;
+    -moz-transition: 0.1s;
+    -ms-transition: 0.1s;
+    -o-transition: 0.1s;
+}
+#toc ul{
+    padding: 0px 10px 5px 20px;
+}
+#toc ul li{
+    list-style: none;
+    line-height: 25px;
+}
+#toc ul li a{
+    color: #999;
+    font-size: 9pt;
+    text-decoration: none;
+}
+
+/* 作者 时间 标题 相关 */
+#post-author {
+    font-size: 9px;
+    position: absolute;
+    top: 60px;
+    right: 30px;
+    color: #999;
+}
+#post-date {
+    font-size: 9px;
+    position: absolute;
+    top: 80px;
+    right: 30px;
+    color: #999;
+}
+#post-title {
+    font-size: 9px;
+    position: absolute;
+    top: 100px;
+    right: 30px;
+    color: #999;
+}

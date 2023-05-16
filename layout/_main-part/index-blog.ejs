@@ -1,0 +1,19 @@
+<%  const readme = () => {
+        var output
+        site.posts.forEach(function(post){
+            if(post.title === theme.indexBlog.title){
+                output = post
+            }    
+        })
+        return output
+    } 
+    var rd = readme()
+%>
+
+<!-- 内容 -->
+    <article class="markdown-body">
+        <div id="article">
+            <%- rd.content %>
+        </div>
+    </article>
+

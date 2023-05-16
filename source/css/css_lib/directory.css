@@ -1,0 +1,65 @@
+.directory-main{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+.directory-main #search.search{
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 26px;
+}
+/* 搜索框 */
+#search input{
+    height: 90%;
+    font-size: 18px;
+    text-indent: 30px;
+    outline: none;
+    border-bottom:.1em solid #757575;
+    border-radius: 10%;
+    color: #052133;
+    background: #f3f3f3;
+}
+/* 搜索图标 */
+#search i.fa.fa-search {
+    margin-right: 10px; 
+    height: 90%;
+    color: #757575;
+    width: 40px;
+    text-align: center;
+}
+/* 隐藏菜单 */
+.directory-main .menu{
+    width: 58%;
+    margin: 0 auto;
+    background-color: #e6e6e6;
+    border-radius: 10px;
+    /* display: none; */
+}
+/* 树目录 */
+#tree ul {
+    padding: 0px 5px 5px 20px;
+}
+#tree ul li {
+    list-style: none;
+    line-height: 25px;
+}
+#tree ul li a {
+    color: rgb(87, 87, 87);
+    font-size: 14px;
+    text-decoration: none
+
+}
+#tree ul li a:hover {
+    color: rgb(0, 0, 0);
+    border-bottom: 1px solid #ccc;
+    cursor:pointer;
+}
+#tree .active a,
+#tree .active a:hover {
+    color: #87daff;
+    border-bottom: 1px solid #87daff;
+}
+#tree i.fa {
+    padding-right: 5px;
+}

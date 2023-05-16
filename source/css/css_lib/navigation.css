@@ -1,0 +1,229 @@
+/* _navigation.ejs中的主体样式 （包含动画）*/
+#navigation.navigation {
+    position: sticky;
+    top: 0;
+    z-index: 998;
+    background-color: #f3f3f3ee;
+}
+#navigation.navigation #navigation-profile.navigation-profile{
+    width: 60%;
+    min-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    line-height: 30px;
+    padding-bottom: 10px;
+
+}
+#navigation.navigation #navigation-profile.navigation-profile div{
+    min-width: 120px;
+}
+#navigation.navigation #navigation-profile.navigation-profile .main-menu {
+    margin: auto;
+    min-width: 960px;
+    text-align: center;
+    position: relative;
+    list-style-type: none;
+    margin-top: 2em;
+    /* background-color: green; */
+    border-radius: 15px;
+}
+
+#navigation.navigation #navigation-profile.navigation-profile .main-menu::after,
+#navigation.navigation #navigation-profile.navigation-profile .main-menu-item.active::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+}
+
+#navigation.navigation #navigation-profile.navigation-profile .main-menu::after {
+    width: 70%;
+    height: 2px;
+    background: #9B1C27;
+    -webkit-animation: menuLine 1s ease forwards;
+    animation: menuLine 1s ease forwards;
+    -webkit-transform: scaleX(0);
+    -ms-transform: scaleX(0);
+    transform: scaleX(0);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    opacity: 0;
+}
+
+@-webkit-keyframes menuLine {
+    to {
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+        opacity: 1;
+    }
+}
+
+@keyframes menuLine {
+    to {
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes menuItem {
+    to {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes menuItem {
+    to {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+#navigation.navigation #navigation-profile.navigation-profile .main-menu-item a {
+    display: block;
+    padding: 1em;
+    text-decoration: none;
+    color: #555;
+    opacity: 0;
+    -webkit-transform: translateY(40%);
+    -ms-transform: translateY(40%);
+    transform: translateY(40%);
+    -webkit-animation: menuItem .8s ease forwards;
+    animation: menuItem .8s ease forwards;
+    -webkit-transition: all .2s ease;
+    transition: all .2s ease;
+}
+
+#navigation.navigation #navigation-profile.navigation-profile .main-menu-item:nth-child(4) a {
+    -webkit-animation-delay: .4s;
+    animation-delay: .4s;
+}
+
+#navigation.navigation #navigation-profile.navigation-profile .main-menu-item:nth-child(3) a,
+#navigation.navigation #navigation-profile.navigation-profile .main-menu-item:nth-child(5) a {
+    -webkit-animation-delay: .5s;
+    animation-delay: .5s;
+}
+
+#navigation.navigation #navigation-profile.navigation-profile .main-menu-item:nth-child(2) a,
+#navigation.navigation #navigation-profile.navigation-profile .main-menu-item:nth-child(6) a {
+    -webkit-animation-delay: .6s;
+    animation-delay: .6s;
+}
+
+#navigation.navigation #navigation-profile.navigation-profile .main-menu-item:nth-child(1) a,
+#navigation.navigation #navigation-profile.navigation-profile .main-menu-item:nth-child(7) a {
+    -webkit-animation-delay: .7s;
+    animation-delay: .7s;
+}
+
+#navigation.navigation #navigation-profile.navigation-profile .main-menu-item {
+    display: inline-block;
+    position: relative;
+}
+
+#navigation.navigation #navigation-profile.navigation-profile .main-menu-item:hover a,
+#navigation.navigation #navigation-profile.navigation-profile .main-menu-item.active a{
+    color: #9B1C27;
+}
+
+#navigation.navigation #navigation-profile.navigation-profile .main-menu-item:hover a::after,
+#navigation.navigation #navigation-profile.navigation-profile .main-menu-item.active::after {
+    width: 0;
+    height: 0;
+    border-bottom: .5em solid #9B1C27;
+    border-left: .5em solid transparent;
+    border-right: .5em solid transparent;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    opacity: 0;
+    -webkit-transform: translateY(0.05em);
+    -ms-transform: translateY(0.05em);
+    transform: translateY(0.05em);
+    -webkit-animation: menuItem .8s 1.2s ease forwards;
+    animation: menuItem .8s 1.2s ease forwards;
+}
+
+
+
+
+
+
+
+
+/* loca-search */
+ul.main-menu ul{
+    margin-inline-start: 0;
+    padding-inline-start: 20px;
+    padding-inline-end: 10px;
+}
+ul.main-menu .main-menu-search{
+    display: inline-block;
+    position: relative;
+    padding-left: 5%;
+    width: 30%;
+    opacity: 0;
+    -webkit-transform: translateY(40%);
+    -ms-transform: translateY(40%);
+    transform: translateY(40%);
+    -webkit-animation: menuItem 1.8s ease forwards;
+    animation: menuItem 1.8s ease forwards;
+    -webkit-transition: all .2s ease;
+    transition: all .2s ease;
+    -webkit-animation-delay: .4s;
+    animation-delay: .4s;
+    z-index: 999;
+}
+ul.main-menu .main-menu-search::after{
+    width: 0;
+    height: 0;
+    /* border-bottom: .5em solid #9B1C27; */
+    border-left: .5em solid transparent;
+    border-right: .5em solid transparent;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    opacity: 0;
+    -webkit-transform: translateY(0.05em);
+    -ms-transform: translateY(0.05em);
+    transform: translateY(0.05em);
+    -webkit-animation: menuItem 1.8s 1.2s ease forwards;
+    animation: menuItem 1.8s 1.2s ease forwards;
+    -webkit-animation-delay: .4s;
+    animation-delay: .4s;
+}
+ul.main-menu .main-menu-search .search-item{
+    width: 100%;
+}
+ul.main-menu .main-menu-search .search-item input.search{
+        width: 100%;
+        padding: .5em;
+        outline: none;
+        color: #2e2e2e;
+        background:#b7717124 ;
+        /* transform: scale(.9,.7); */
+}
+#local-search-result{
+    width: 85.7%;
+    position: absolute;
+    background-color: #592127;
+    z-index: 999;
+    padding:0;
+    line-height: 12pt;
+    text-align: initial;
+    margin-inline-start: 0;
+    max-height: 300px;
+    overflow-y:scroll;
+}
+#local-search-result::-webkit-scrollbar{
+    display: none;
+}
+

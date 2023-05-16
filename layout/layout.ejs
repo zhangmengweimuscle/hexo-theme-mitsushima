@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%= theme.title %></title>
+        <meta charset="UTF-8">
+        <%- css("css/main.css") %>
+        <!-- 字体图片库 -->
+        <%- css("lib/font-awesome-4.7.0/css/font-awesome.min.css") %>
+        <!-- 代码高亮库 -->
+        <%- css("lib/prism/prism.css") %>
+        <%- js("js/jquery-3.4.1.min.js") %>
+        <%- css("lib/github-markdown.css") %>
+    </head>
+    <body>
+        <%- include("./_sub-part/_header.ejs") %>
+        <%- include("./_sub-part/_navigation.ejs") %>
+        <div style="position: relative;">
+            <%- body %>
+        </div>
+        <%- include("./_sub-part/_footer.ejs") %>
+        
+        <!-- 引入代码高亮的 js -->
+        <%- js("lib/prism/prism.js") %>
+        <script>
+            $("figure").each(function(i,e){
+                let lang = e.classList[1];
+                $(e).find('td.code pre').each(function(index,element){
+                    element.innerHTML = '<code class = "language-'+lang+'">'+element.innerText+'</code>';
+                })
+            })
+        </script>
+         <!-- 页面初始化 -->
+         <%- js("js/initialization.js") %>
+    </body>
+</html>

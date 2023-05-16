@@ -1,0 +1,47 @@
+/* import */
+@import url("http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,100,700");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono|Source+Sans+Pro:300,400,600");
+@import url('css_lib/navigation.css');
+@import url('css_lib/index.css');
+@import url('css_lib/directory.css');
+@import url('css_lib/post.css');
+@import url('css_lib/footer.css');
+/* 去掉滚动条 */
+*::-webkit-scrollbar{
+    display: none;
+}
+/* 搜索框 */
+input {
+    width: 40%;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    left: 0;    
+    /* height: 90%;
+    font-size: 18px;
+    text-indent: 30px;
+    outline: none;
+    border-bottom:.1em solid #757575;
+    border-radius: 10%;
+    color: #052133;
+    background: #f3f3f3; */
+}
+li{
+    list-style: none;
+}
+a,a:link,a:hover,a:visited,a:active,a:focus{
+    text-decoration: none;
+    /* color: #000; */
+}
+body {
+    background: #f3f3f3;
+    /* background: linear-gradient(to bottom right , black,#f3f3f3,white); */
+    /* background: linear-gradient(to left,white,#f3f3f3,#b9b9b9); */
+    /* font-family: 'Roboto Slab', serif; */
+    font-family: Dosis,Source Sans Pro,Helvetica Neue,Arial,sans-serif;
+    font-size: 12px;
+    margin: 0 auto;
+    color: #444;
+    min-height: 500px;
+}
+

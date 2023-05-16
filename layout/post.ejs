@@ -1,0 +1,44 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+	.markdown-body {
+		box-sizing: border-box;
+		min-width: 200px;
+		max-width: 980px;
+		margin: 0 auto;
+		padding: 45px;
+	}
+
+	@media (max-width: 767px) {
+		.markdown-body {
+			padding: 15px;
+		}
+	}
+
+</style>
+<!-- 作者信息 -->
+<div>
+    <span id="post-author">Author: <%- theme.author %></span>
+    <span id="post-date"><%- date(page.date, "YYYY-MM-DD HH:mm:ss") %></span>
+	<span id="post-title"><%- page.title %> </span>
+</div>
+<!-- 目录 -->
+<div id="tooc">
+    <div id="toc"></div>
+</div>
+<!-- 内容 -->
+<article class="markdown-body">
+    <div id="article">
+        <%- page.content %>
+    </div>
+</article>
+
+<!-- 使用mermaid渲染流程图 -->
+<% if (theme.mermaid.enable) { %>
+	<%- js("js/mermaid.min.js") %>
+	<script>
+	  if (window.mermaid) {
+		mermaid.initialize({theme: 'forest'});
+	  }
+	</script>
+  <% } %>
+

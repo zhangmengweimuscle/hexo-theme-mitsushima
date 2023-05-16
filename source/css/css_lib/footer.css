@@ -1,0 +1,19 @@
+#footer.footer{
+    user-select: none; 
+    pointer-events: none;
+    padding: 20px; 
+    margin-top: 30px; 
+    /* background-color: #00000033; */
+}
+#footer.footer #footer-profile.footer-profile{
+    /* border-top:  .5pt solid black; */
+    width: 70%;
+    min-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    line-height: 30px;
+}
+#footer.footer #footer-profile.footer-profile div{
+    min-width: 120px;
+}
