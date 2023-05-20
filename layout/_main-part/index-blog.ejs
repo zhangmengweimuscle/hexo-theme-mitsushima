@@ -1,4 +1,5 @@
 <%  const readme = () => {
+    // 查找README文章，该文章的title被定义在themes目录下的_config.yml文件中
         var output
         site.posts.forEach(function(post){
             if(post.title === theme.indexBlog.title){

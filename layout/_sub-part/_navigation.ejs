@@ -2,12 +2,12 @@
 <div id="navigation" class="navigation">
     <div id="navigation-profile" class="navigation-profile">
         <ul class="main-menu">   
+            <!-- navigation -->
             <% for (menu in theme.menus) { %>
                 <li id="<%- menu%>" class="main-menu-item <%if(is_current(theme.menus[menu])){%> active <% } %>">
                     <a href="<%- theme.menus[menu] %>"><%- menu%></a>
                 </li>
             <% }%>
-            
             <!-- local-search功能 -->
             <li class=" main-menu-search">
                 <%- js('js/search.js') %>

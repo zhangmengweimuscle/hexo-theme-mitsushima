@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="icon" href="/img/favicon .ico" mce_href="/img/favicon .ico" type="image/x-icon" />
         <title><%= theme.title %></title>
         <meta charset="UTF-8">
+        <%- js("js/jquery-3.4.1.min.js") %>
         <%- css("css/main.css") %>
+
         <!-- 字体图片库 -->
         <%- css("lib/font-awesome-4.7.0/css/font-awesome.min.css") %>
         <!-- 代码高亮库 -->
         <%- css("lib/prism/prism.css") %>
-        <%- js("js/jquery-3.4.1.min.js") %>
+        <!-- echarts 图表库 -->
+        <%- js("lib/echarts/echarts.js") %>
         <%- css("lib/github-markdown.css") %>
     </head>
     <body>
@@ -16,7 +20,9 @@
         <%- include("./_sub-part/_navigation.ejs") %>
         <div style="position: relative;">
             <%- body %>
+            
         </div>
+        <a href="#" class="back2top">返回顶部</a>
         <%- include("./_sub-part/_footer.ejs") %>
         
         <!-- 引入代码高亮的 js -->

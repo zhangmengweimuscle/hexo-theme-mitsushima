@@ -212,7 +212,7 @@ ul.main-menu .main-menu-search .search-item input.search{
         /* transform: scale(.9,.7); */
 }
 #local-search-result{
-    width: 85.7%;
+    width: 79.7%;
     position: absolute;
     background-color: #592127;
     z-index: 999;

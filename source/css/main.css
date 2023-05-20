@@ -43,5 +43,30 @@ body {
     margin: 0 auto;
     color: #444;
     min-height: 500px;
+    display: grid;
+    
+    
 }
 
+/* 返回顶部按钮 */
+.back2top{
+    display: none;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;      
+    margin-right: 10px; 
+    place-self: end;
+    width: 30px;
+    aspect-ratio: 1;
+    background: #ba875a;
+    border-radius: 10px;
+    font-size: 0;
+}
+.back2top:before{
+    content: "";
+    position: absolute;
+    inset: 30%;
+    transform: translateY(20%) rotate(-45deg);
+    border-top: 5px solid #fff;
+    border-right: 5px solid #fff;
+}

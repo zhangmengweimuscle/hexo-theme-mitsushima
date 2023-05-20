@@ -159,6 +159,7 @@ function showArticleIndex() {
             500
         );
     });
+
     // 监听浏览器滚动条，当浏览过的标签，给他上色。
     $(window).on("scroll", function(e){
         var anchorList = $(".anchor");
@@ -181,5 +182,20 @@ function showArticleIndex() {
         var scrollPercent = ($(window).scrollTop()/($(document).height()-$(window).height()))*100;
         scrollPercent = scrollPercent.toFixed(1);
         $("#toc").css("top",(($("#toc").height()-$(window).height())*.01+.55)*(1-scrollPercent));
+        $(".back2top").css("display",scrollPercent > 9.9 ? "block" : "none") //进度条下拉 出现返回顶部按钮
     });
+
+    
+    //back2top 按钮平滑滚动
+    $('.back2top').on("click",function(e){
+        $("body, html").animate(
+            {'scrollTop': 0},
+            500
+        );
+    })
+
+
+
+
+
 }
