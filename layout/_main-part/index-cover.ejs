@@ -12,13 +12,62 @@
       </div> -->
 
     </div>
-    <div style="hight:0" id="index-categories">
   
 
 
    <script>
-      console.log(" <%site.categories.forEach(function(element){%> <%- element.name %> <% }) %>")   
+      console.log("<%- site2Arr(site.categories,'name')%>")   
    </script>
+   <% console.log(site2Arr(site.categories,"post"))%>
+   <% 
+      
+      console.log(site2Arr(site.categories,'length',true));
+   %>
 
-    </div>
+   <script type="text/javascript">
+      // 基于准备好的dom，初始化echarts实例
+      var index_chart = echarts.init(document.getElementById('index-content'));
+
+      // 指定图表的配置项和数据
+      var option = {
+         title: {
+            text: 'Languages'
+         },
+         tooltip: {},
+         legend: {
+            data: ['categories','wordcount']
+         },
+         xAxis: {
+            type: 'log',
+            min: 1,
+            axisLabel:{
+               formatter:function(v){ //v为刻度 从0开始
+                  return v === 1 ? 0 : v
+               }
+            }
+         },
+         yAxis: {
+            data: "<%- site2Arr(site.categories,'name')%>".split(',')
+         },
+         series: [
+            {
+               name: 'categories',
+               type: 'bar',
+               data: "<%- site2Arr(site.categories,'length',true)%>".split(',')
+            },
+            {
+               name: 'wordcount',
+               type: 'bar',
+               data: "<%- sortWcount(site.categories)%>".split(',')
+            }
+         ]
+         
+      };
+      // 使用刚指定的配置项和数据显示图表。
+      index_chart.setOption(option);
+    </script>
+
+
+
+
 </div>

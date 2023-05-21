@@ -1,7 +1,3 @@
----
-title: README
----
-
 ## hexo-theme-mitsushima
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/zhangmengweimuscle/hexo-theme-mitsushima?style=float) ![GitHub watchers](https://img.shields.io/github/watchers/zhangmengweimuscle/hexo-theme-mitsushima?style=float) ![GitHub Repo stars](https://img.shields.io/github/stars/zhangmengweimuscle/hexo-theme-mitsushima?style=float)
@@ -19,8 +15,8 @@ git clone https://github.com/zhangmengweimuscle/hexo-theme-mitsushima.git
 ```
 
 ```yaml
-# 将根目录下的_config.yml中的theme 改成mitsushima
-theme: mitsushima
+# 将根目录下的_config.yml中的theme 改成hexo-theme-mitsushima
+theme: hexo-theme-mitsushima
 ```
 
 ### 开发/维护计划
