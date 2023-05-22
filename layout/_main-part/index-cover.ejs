@@ -1,41 +1,31 @@
 <div id="index-main" class="index-main">
     <!-- 链接 -->
     <div class="index-content" id="index-content">
-      <!-- <div class="links">
-         
+      <div id="index-languages" style="height: 320px"></div>
+      <div id="index-percent" style="height: 70px"></div>
+      <div id="index-links" class="links" style="height: 70px">
          <ul class="profile-social-links">
             <li><a href="https://github.com/zhangmengweimuscle"><img src="../img/github.png"></a></li>
             <li><a href="https://ejs.bootcss.com/"><img src="../img/sj.png"></a></li>
             <li><a href="https://hexo.io/zh-cn/"><img src="../img/hexo.png"></a></li>
             <li><a href="https://git-scm.com/"><img src="../img/git.png"></a></li>
          </ul>
-      </div> -->
-
+      </div>
     </div>
-  
-
-
-   <script>
-      console.log("<%- site2Arr(site.categories,'name')%>")   
-   </script>
-   <% console.log(site2Arr(site.categories,"post"))%>
-   <% 
-      
-      console.log(site2Arr(site.categories,'length',true));
-   %>
-
+    <script src="lib/echarts/essos.js"></script>
    <script type="text/javascript">
       // 基于准备好的dom，初始化echarts实例
-      var index_chart = echarts.init(document.getElementById('index-content'));
-
+      var languages_chart = echarts.init(document.getElementById('index-languages'),'essos');
+      var percent_chart = echarts.init(document.getElementById('index-percent'),'essos');
       // 指定图表的配置项和数据
-      var option = {
+      var languages_option = {
          title: {
             text: 'Languages'
          },
          tooltip: {},
          legend: {
-            data: ['categories','wordcount']
+            data: ['posts','wordcount'],
+            right: 10
          },
          xAxis: {
             type: 'log',
@@ -45,26 +35,91 @@
                   return v === 1 ? 0 : v
                }
             }
+            
          },
          yAxis: {
             data: "<%- site2Arr(site.categories,'name')%>".split(',')
+            
          },
+         grid:{
+               left: '2',
+               containLabel: true,
+               bottom:40
+            },
          series: [
             {
-               name: 'categories',
+               name: 'posts',
                type: 'bar',
-               data: "<%- site2Arr(site.categories,'length',true)%>".split(',')
+               data: "<%- site2Arr(site.categories,'length',true)%>".split(','),
+               label:{
+                  formatter:function(param){
+                     return param.data == 1.15 ? 1 : param.data
+                  }
+               },
+               tooltip:{
+                  valueFormatter: value => value == 1.15 ? 1 : value
+               }
+               
+
             },
             {
                name: 'wordcount',
                type: 'bar',
                data: "<%- sortWcount(site.categories)%>".split(',')
             }
-         ]
+         ],
          
       };
+      let percent_name = [];
+      let percent_data = [];
+      let percent_series = [];
+      let _obj = new Object();
+      percent_name = "<%- site2Arr(site.categories,'name')%>".split(',');
+      percent_data = "<%- sortWcount(site.categories)%>".split(',');
+      for(let i =0;i<percent_name.length;i++){
+         _obj = {};
+         _obj.name = percent_name[i];
+         _obj.type = 'bar';
+         _obj.stack = 'total';
+         // _obj.label = {show : true};
+         _obj.emphasis = {focus :'series'};
+         _obj.data = [(parseInt(percent_data[i])/parseInt('<%- totalwords(site)%>')).toFixed(3)]
+         percent_series.push(_obj);
+      }
+      var percent_option ={
+         tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+               // Use axis to trigger tooltip
+               type: 'shadow' // 'shadow' as default; can also be 'line' or 'shadow'
+            },
+            valueFormatter: value => (value*100).toFixed(1) + ' %'
+         },
+         // legend: {},
+         grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+         },
+         legend: {
+
+         },
+         xAxis: {
+            // type: 'value'
+            show: false,
+            max: 'dataMax',
+         },
+         yAxis: {
+            type: 'category',
+            data: ['percent']
+         },
+         series: percent_series
+      }
+      
       // 使用刚指定的配置项和数据显示图表。
-      index_chart.setOption(option);
+      languages_chart.setOption(languages_option);
+      percent_chart.setOption(percent_option);
     </script>
 
 

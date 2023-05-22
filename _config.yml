@@ -1,11 +1,12 @@
 title: MUSCLE
 author: Muscle
-theme: DEMO_BLOG
+theme: mitsushima
 
 menus: 
   HOME: /
   DIRECTORY: /directory
   PAGE: /20
+  COMMENT: /comment
   # ABOUT: /about
   #POST:/20
 

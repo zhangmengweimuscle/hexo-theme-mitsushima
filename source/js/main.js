@@ -1,0 +1,1 @@
+import Gitment from 'gitment'

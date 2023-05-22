@@ -155,7 +155,7 @@ function showArticleIndex() {
         // 获取当前点击的 a 标签，并前触发滚动动画往对应的位置
         var target = $(this.hash);
         $("body, html").animate(
-            {'scrollTop': target.offset().top},
+            {'scrollTop': target.offset().top-88},
             500
         );
     });

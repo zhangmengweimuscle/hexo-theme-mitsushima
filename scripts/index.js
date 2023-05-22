@@ -167,5 +167,14 @@ hexo.extend.helper.register('sortWcount',function(siteElement){
     output = Array.from(_m.values());
     return output;
 });
-
+//总字数统计 不带k
+hexo.extend.helper.register('totalwords', function (site) {
+  var count = 0;
+  site.posts.forEach(function (post) {
+    var len = counter(post.content);
+    count += len[0] + len[1];
+  });
+    return count;
+  
+});
 
